@@ -1,5 +1,5 @@
 <template lang="pug">
-  button(class="vote-button")
+  button(class="vote-button", @click="countup()")
     img(src="@/assets/logo.png")
     span.name Vue.js
     span.count {{ count }}
@@ -11,6 +11,11 @@ export default {
   data() {
     return {
       count: 0
+    }
+  },
+  methods: {
+    countup() {
+      this.count++
     }
   }
 }
