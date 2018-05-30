@@ -1,6 +1,7 @@
 <template lang="pug">
-  div(class="vote-button-list")
-    VoteButton(targetName="vue")
+  ul(class="vote-button-list")
+    li(v-for="(target, targetName) in targets")
+      VoteButton(:targetName="targetName")
 </template>
 
 <script>
@@ -10,6 +11,16 @@ export default {
   name: 'VoteButtonList',
   components: {
     VoteButton
+  },
+  data() {
+    return {
+      targets: {
+        ember: { name: 'Ember.js' },
+        react: { name: 'React.js' },
+        riot: { name: 'Riot.js' },
+        vue: { name: 'Vue.js' }
+      }
+    }
   }
 }
 </script>

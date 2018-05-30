@@ -20,7 +20,7 @@ export default {
     },
     targetName: {
       validator: function(value) {
-        return ['vue'].includes(value)
+        return ['ember', 'react', 'riot', 'vue'].includes(value)
       }
     }
   },
@@ -28,6 +28,9 @@ export default {
     return {
       count: this.initCount,
       targets: {
+        ember: { name: 'Ember.js' },
+        react: { name: 'React.js' },
+        riot: { name: 'Riot.js' },
         vue: { name: 'Vue.js' }
       }
     }
