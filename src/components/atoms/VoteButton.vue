@@ -8,9 +8,10 @@
 <script>
 export default {
   name: 'VoteButton',
+  props: ['initCount'],
   data() {
     return {
-      count: 0
+      count: this.initCount
     }
   },
   methods: {
