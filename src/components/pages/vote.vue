@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="vote-page")
-    VoteButton(:initCount="0")
+    VoteButton
 </template>
 
 <script>

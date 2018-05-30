@@ -9,7 +9,10 @@
 export default {
   name: 'VoteButton',
   props: {
-    initCount: Number
+    initCount: {
+      type: Number,
+      default: 0
+    }
   },
   data() {
     return {
