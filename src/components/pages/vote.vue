@@ -1,15 +1,15 @@
 <template lang="pug">
   div(class="vote-page")
-    VoteButton
+    VoteUnit
 </template>
 
 <script>
-import VoteButton from '@/components/atoms/VoteButton'
+import VoteUnit from '@/components/organisms/VoteUnit'
 
 export default {
   name: 'vote',
   components: {
-    VoteButton
+    VoteUnit
   }
 }
 </script>
