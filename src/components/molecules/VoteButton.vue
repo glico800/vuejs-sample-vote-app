@@ -38,6 +38,7 @@ export default {
   methods: {
     countup() {
       this.count++
+      this.$emit('countup-from-button', this.targetName)
     }
   },
   computed: {

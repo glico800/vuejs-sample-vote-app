@@ -1,7 +1,8 @@
 <template lang="pug">
   ul(class="vote-button-list")
     li(v-for="(target, targetName) in targets")
-      VoteButton(:targetName="targetName")
+      VoteButton(:targetName="targetName", @countup-from-button="countupOf")
+      p {{target.count}}
 </template>
 
 <script>
@@ -15,11 +16,16 @@ export default {
   data() {
     return {
       targets: {
-        ember: { name: 'Ember.js' },
-        react: { name: 'React.js' },
-        riot: { name: 'Riot.js' },
-        vue: { name: 'Vue.js' }
+        ember: { name: 'Ember.js', count: 0 },
+        react: { name: 'React.js', count: 0 },
+        riot: { name: 'Riot.js', count: 0 },
+        vue: { name: 'Vue.js', count: 0 }
       }
+    }
+  },
+  methods: {
+    countupOf: function(targetName) {
+      this.targets[targetName].count++
     }
   }
 }
