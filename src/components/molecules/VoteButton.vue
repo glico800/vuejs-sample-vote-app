@@ -38,6 +38,7 @@ export default {
   methods: {
     countup() {
       this.count++
+      // Sending Messages to Parents with Events
       this.$emit('countup-from-button', this.targetName)
     }
   },
