@@ -1,6 +1,6 @@
 <template lang="pug">
-  ul(class="vote-button-list")
-    li(v-for="(target, targetName) in targets")
+  ul.vote-button-list
+    li.vote-button-item(v-for="(target, targetName) in targets")
       VoteButton(:targetName="targetName", @countup-from-button="countupOf")
 </template>
 
@@ -44,5 +44,12 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+.vote-button-list
+  display: flex;
+  justify-content: center;
+
+.vote-button-item
+  margin: 0 10px;
+  list-style: none;
 </style>

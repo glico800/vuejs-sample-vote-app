@@ -1,6 +1,7 @@
 <template lang="pug">
-  div(class="vote-unit")
-    VoteImage(:targetName="winner")
+  div.vote-unit
+    h1.title Which front-end framework do you choose?
+    VoteImage(:targetName="winner", :xSize="2")
     VoteButtonList(@countup-from-list="countupOf")
 </template>
 
@@ -40,5 +41,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
+primary-color = #42b983
+
+.title
+  color: darken(primary-color, 60%);
 </style>

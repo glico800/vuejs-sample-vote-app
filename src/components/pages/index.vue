@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="index")
+  div.index
     img(src="@/assets/vue_logo.png")
     HelloWorld
 </template>
@@ -15,5 +15,5 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 </style>

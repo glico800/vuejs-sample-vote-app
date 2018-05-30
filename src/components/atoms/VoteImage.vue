@@ -1,5 +1,5 @@
 <template lang="pug">
-  img(:src="imageSrc")
+  img(:src="imageSrc", :height="height", :width="width")
 </template>
 
 <script>
@@ -10,6 +10,10 @@ export default {
       validator: function(value) {
         return ['ember', 'react', 'riot', 'vue'].includes(value)
       }
+    },
+    xSize: {
+      type: Number,
+      default: 1
     }
   },
   data() {
@@ -17,7 +21,9 @@ export default {
       emberImage: require('@/assets/ember_logo.png'),
       reactImage: require('@/assets/react_logo.png'),
       riotImage: require('@/assets/riot_logo.png'),
-      vueImage: require('@/assets/vue_logo.png')
+      vueImage: require('@/assets/vue_logo.png'),
+      baseHeight: 100,
+      baseWidth: 100
     }
   },
   computed: {
@@ -32,10 +38,16 @@ export default {
         case 'vue':
           return this.vueImage
       }
+    },
+    height: function() {
+      return this.baseHeight * this.xSize + 'px'
+    },
+    width: function() {
+      return this.baseWidth * this.xSize + 'px'
     }
   }
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 </style>

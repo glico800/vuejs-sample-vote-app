@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="hello")
+  div.hello
     h1 {{ msg }}
 </template>
 

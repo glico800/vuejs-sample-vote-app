@@ -1,5 +1,5 @@
 <template lang="pug">
-  div(class="vote-page")
+  div.vote-page
     VoteUnit
 </template>
 
@@ -14,5 +14,5 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 </style>
