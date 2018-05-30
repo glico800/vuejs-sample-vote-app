@@ -1,5 +1,6 @@
 <template lang="pug">
   div(class="index")
+    img(src="@/assets/logo.png")
     HelloWorld
 </template>
 
