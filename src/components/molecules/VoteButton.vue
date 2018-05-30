@@ -27,7 +27,6 @@ export default {
   data() {
     return {
       count: this.initCount,
-      vue_image: require('@/assets/logo.png'),
       targets: {
         vue: { name: 'Vue.js' }
       }
@@ -44,12 +43,6 @@ export default {
     },
     name: function() {
       return this.target.name
-    },
-    image_src: function() {
-      switch (this.targetName) {
-        case 'vue':
-          return this.vue_image
-      }
     }
   }
 }
