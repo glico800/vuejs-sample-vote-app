@@ -2,7 +2,6 @@
   ul(class="vote-button-list")
     li(v-for="(target, targetName) in targets")
       VoteButton(:targetName="targetName", @countup-from-button="countupOf")
-      p {{target.count}}
 </template>
 
 <script>
@@ -26,6 +25,20 @@ export default {
   methods: {
     countupOf: function(targetName) {
       this.targets[targetName].count++
+    }
+  },
+  watch: {
+    'targets.ember.count': function(val) {
+      this.$emit('countup-from-list', 'ember')
+    },
+    'targets.react.count': function(val) {
+      this.$emit('countup-from-list', 'react')
+    },
+    'targets.riot.count': function(val) {
+      this.$emit('countup-from-list', 'riot')
+    },
+    'targets.vue.count': function(val) {
+      this.$emit('countup-from-list', 'vue')
     }
   }
 }
