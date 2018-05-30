@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      vue_image: require('@/assets/logo.png')
+      vue_image: require('@/assets/vue_logo.png')
     }
   },
   computed: {

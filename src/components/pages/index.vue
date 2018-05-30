@@ -1,6 +1,6 @@
 <template lang="pug">
   div(class="index")
-    img(src="@/assets/logo.png")
+    img(src="@/assets/vue_logo.png")
     HelloWorld
 </template>
 
