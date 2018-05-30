@@ -1,10 +1,10 @@
 <template lang="pug">
   div(class="vote-button-list")
-    VoteButton
+    VoteButton(targetName="vue")
 </template>
 
 <script>
-import VoteButton from '@/components/atoms/VoteButton'
+import VoteButton from '@/components/molecules/VoteButton'
 
 export default {
   name: 'VoteButtonList',
