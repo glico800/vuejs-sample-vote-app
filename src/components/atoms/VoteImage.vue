@@ -1,5 +1,5 @@
 <template lang="pug">
-  img(:src="image_src")
+  img(:src="imageSrc")
 </template>
 
 <script>
@@ -14,23 +14,23 @@ export default {
   },
   data() {
     return {
-      ember_image: require('@/assets/ember_logo.png'),
-      react_image: require('@/assets/react_logo.png'),
-      riot_image: require('@/assets/riot_logo.png'),
-      vue_image: require('@/assets/vue_logo.png')
+      emberImage: require('@/assets/ember_logo.png'),
+      reactImage: require('@/assets/react_logo.png'),
+      riotImage: require('@/assets/riot_logo.png'),
+      vueImage: require('@/assets/vue_logo.png')
     }
   },
   computed: {
-    image_src: function() {
+    imageSrc: function() {
       switch (this.targetName) {
         case 'ember':
-          return this.ember_image
+          return this.emberImage
         case 'react':
-          return this.react_image
+          return this.reactImage
         case 'riot':
-          return this.riot_image
+          return this.riotImage
         case 'vue':
-          return this.vue_image
+          return this.vueImage
       }
     }
   }
