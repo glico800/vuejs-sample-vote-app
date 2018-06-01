@@ -31,6 +31,7 @@ export default {
       this.counts[targetName]++
       this.updateWinner()
     },
+    // HACK: try using computed
     updateWinner: function() {
       const maxCount = Math.max.apply(null, Object.values(this.counts))
       this.winner = Object.keys(this.counts).filter(key => {

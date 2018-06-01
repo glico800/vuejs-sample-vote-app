@@ -27,6 +27,7 @@ export default {
       this.targets[targetName].count++
     }
   },
+  // HACK: add simple state management or Vuex
   watch: {
     'targets.ember.count': function(val) {
       this.$emit('countup-from-list', 'ember')
