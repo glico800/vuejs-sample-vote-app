@@ -1,11 +1,12 @@
 <template lang="pug">
   ul.vote-button-list
-    li.vote-button-item(v-for="(target, targetName) in targets")
-      VoteButton(:targetName="targetName", @countup-from-button="countupOf")
+    li.vote-button-item(v-for="(target, targetName) in sharedState.targets")
+      VoteButton(:targetName="targetName")
 </template>
 
 <script>
 import VoteButton from '@/components/molecules/VoteButton'
+import store from '@/stores'
 
 export default {
   name: 'VoteButtonList',
@@ -14,32 +15,8 @@ export default {
   },
   data() {
     return {
-      targets: {
-        ember: { name: 'Ember.js', count: 0 },
-        react: { name: 'React.js', count: 0 },
-        riot: { name: 'Riot.js', count: 0 },
-        vue: { name: 'Vue.js', count: 0 }
-      }
-    }
-  },
-  methods: {
-    countupOf: function(targetName) {
-      this.targets[targetName].count++
-    }
-  },
-  // HACK: add simple state management or Vuex
-  watch: {
-    'targets.ember.count': function(val) {
-      this.$emit('countup-from-list', 'ember')
-    },
-    'targets.react.count': function(val) {
-      this.$emit('countup-from-list', 'react')
-    },
-    'targets.riot.count': function(val) {
-      this.$emit('countup-from-list', 'riot')
-    },
-    'targets.vue.count': function(val) {
-      this.$emit('countup-from-list', 'vue')
+      privateState: {},
+      sharedState: store.state
     }
   }
 }

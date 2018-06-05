@@ -1,13 +1,14 @@
 <template lang="pug">
   div.vote-unit
     h1.title Which front-end framework do you choose?
-    VoteImage(:targetName="winner", :xSize="2")
-    VoteButtonList(@countup-from-list="countupOf")
+    VoteImage(:targetName="sharedState.winner", :xSize="2")
+    VoteButtonList
 </template>
 
 <script>
 import VoteImage from '@/components/atoms/VoteImage'
 import VoteButtonList from '@/components/molecules/VoteButtonList'
+import store from '@/stores'
 
 export default {
   name: 'VoteUnit',
@@ -17,26 +18,8 @@ export default {
   },
   data() {
     return {
-      counts: {
-        ember: 0,
-        react: 0,
-        riot: 0,
-        vue: 0
-      },
-      winner: 'ember'
-    }
-  },
-  methods: {
-    countupOf: function(targetName) {
-      this.counts[targetName]++
-      this.updateWinner()
-    },
-    // HACK: try using computed
-    updateWinner: function() {
-      const maxCount = Math.max.apply(null, Object.values(this.counts))
-      this.winner = Object.keys(this.counts).filter(key => {
-        return this.counts[key] === maxCount
-      })[0]
+      privateState: {},
+      sharedState: store.state
     }
   }
 }

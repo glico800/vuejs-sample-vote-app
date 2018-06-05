@@ -1,12 +1,13 @@
 <template lang="pug">
-  button.vote-button(@click="countup()")
+  button.vote-button(@click="countup")
     VoteImage.image(:targetName="targetName")
-    span.name {{ name }}
-    span.count {{ count }}
+    span.name {{ target.name }}
+    span.count {{ target.count }}
 </template>
 
 <script>
 import VoteImage from '@/components/atoms/VoteImage'
+import store from '@/stores'
 
 export default {
   name: 'VoteButton',
@@ -14,10 +15,6 @@ export default {
     VoteImage
   },
   props: {
-    initCount: {
-      type: Number,
-      default: 0
-    },
     targetName: {
       validator: function(value) {
         return ['ember', 'react', 'riot', 'vue'].includes(value)
@@ -26,28 +23,18 @@ export default {
   },
   data() {
     return {
-      count: this.initCount,
-      targets: {
-        ember: { name: 'Ember.js' },
-        react: { name: 'React.js' },
-        riot: { name: 'Riot.js' },
-        vue: { name: 'Vue.js' }
-      }
+      privateState: {},
+      sharedState: store.state
     }
   },
   methods: {
     countup() {
-      this.count++
-      // Sending Messages to Parents with Events
-      this.$emit('countup-from-button', this.targetName)
+      store.countupOf(this.targetName)
     }
   },
   computed: {
     target: function() {
-      return this.targets[this.targetName]
-    },
-    name: function() {
-      return this.target.name
+      return this.sharedState.targets[this.targetName]
     }
   }
 }
