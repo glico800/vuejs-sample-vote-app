@@ -36,4 +36,4 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 1.  https://github.com/ezawa800/vuejs-sample-vote-app/compare/step1_setup_pages...step2_add_vote_btn_func
 1.  https://github.com/ezawa800/vuejs-sample-vote-app/compare/step2_add_vote_btn_func...step3_copy_vote_btn
 1.  https://github.com/ezawa800/vuejs-sample-vote-app/compare/step3_copy_vote_btn...step4_add_winner_logic
-1.  https://github.com/ezawa800/vuejs-sample-vote-app/compare/step4_for_comparing...step5_convet_to_store_pattern
+1.  https://github.com/ezawa800/vuejs-sample-vote-app/compare/step4_for_comparing...step5_using_store
